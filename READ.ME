@@ -1,0 +1,55 @@
+Sistema de Biblioteca (Java + CLI):
+
+Este foi o meu primeiro projeto em Java construído do zero, feito logo depois de estudar os fundamentos da linguagem: variáveis, estruturas de controle, arrays, métodos e os pilares da Programação Orientada a Objetos (encapsulamento, herança, polimorfismo e abstração).
+
+A ideia era simples: sair da teoria e colocar a mão na massa em algo com utilidade real — um sistema de gerenciamento de livros rodando via terminal (CLI), com cadastro, listagem, busca, edição e remoção.
+
+O que o sistema faz:
+
+Um menu interativo no terminal permite:
+
+Cadastrar um novo livro (título, autor, ano e código)
+Listar todos os livros cadastrados
+Buscar um livro pelo título
+Remover um livro pelo título
+Editar qualquer atributo de um livro já cadastrado
+
+Conceitos aplicados:
+
+Construir esse projeto foi o que me fez sair do "entender a teoria" para o "usar na prática". Alguns pontos que apliquei diretamente aqui:
+
+Classes e objetos: Livro como uma classe própria, com atributos privados e acesso via getters/setters (encapsulamento).
+Coleções: uso de ArrayList<Livro> para armazenar os livros dinamicamente em memória.
+Optional e Streams: busca de livros usando .stream().filter().findFirst() combinado com Optional, para lidar com a possibilidade de não encontrar resultado sem correr risco de NullPointerException.
+Switch expressions (->), introduzidas nas versões mais recentes do Java, para deixar o menu mais legível do que o switch tradicional.
+Validação de entrada: loops que impedem campos de texto vazios, impedem valores não numéricos onde é esperado um número, e bloqueiam anos negativos no cadastro e na edição de livros.
+Organização em pacotes: separação das classes Biblioteca (lógica principal), Livro (modelo) e LeitorConsole (entrada de dados) dentro do pacote biblioteca.
+
+O que esse projeto me ensinou :
+
+Esse foi o projeto onde percebi, na prática, coisas que a teoria sozinha não deixa tão claras:
+
+Como nomes de métodos e classes inconsistentes tornam o código difícil de manter — tive que revisar e padronizar nomes para seguir as convenções do Java (PascalCase para classes, camelCase para métodos).
+Como um pequeno erro de digitação (como chamar um método que não existe, ou usar uma variável com nome diferente do declarado) impede o programa inteiro de compilar — e a importância de revisar o código com calma antes de considerá-lo pronto.
+Como validar entradas do usuário é uma parte essencial (e nada trivial) de qualquer sistema interativo.
+Como separar responsabilidades entre classes (modelo, leitura de dados, lógica principal) deixa o código mais organizado e fácil de entender.
+
+Como executar:
+
+bash
+# Compilar
+javac src/biblioteca/*.java -d out
+
+# Executar
+java -cp out biblioteca.Biblioteca
+
+Possíveis evoluções futuras :
+
+Algumas ideias para continuar evoluindo esse projeto:
+
+Persistir os dados em arquivo ou banco de dados (hoje eles somem ao fechar o programa)
+Escrever testes automatizados com JUnit
+Adicionar validação também para código negativo
+Migrar para uma interface gráfica ou uma API REST com Spring Boot
+
+Projetinho feito como parte do meu aprendizado de Java, estudando POO, coleções e boas práticas da linguagem.
